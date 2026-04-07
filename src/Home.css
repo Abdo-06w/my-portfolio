@@ -1,0 +1,291 @@
+.home-container{
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.title-container{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    height:fit-content;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title,.subtitle{
+    margin: 0;
+    font-family: "Geist",sans-serif;
+}
+
+.title{
+    font-size: 4.5rem;
+    font-weight: 600;
+}
+
+.effects{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    position: relative;
+    
+}
+
+.star{
+    position: absolute;
+    animation: sparkle 3s linear infinite;
+    opacity: 0;
+    fill: #9E7AFF;
+    transition: fill 0.5s ease;
+}
+
+.star1 {
+  animation-delay: 0s, 0s, 0s;
+  top: 20%;
+  left: 7%;
+}
+
+.star2 {
+  animation-delay: 0.5s, 0.5s, 0.5s;
+  top: 15%;
+  left: 35%;
+}
+
+.star3 {
+  animation-delay: 1s, 1s, 1s;
+  top: 75%;
+  left: 25%;
+}
+
+.star4 {
+  animation-delay: 1.5s, 1.5s, 1.5s;
+  top: 30%;
+  left: 60%;
+}
+
+.star5 {
+  animation-delay: 2s, 2s, 2s;
+  top: 70%;
+  left: 90%;
+}
+
+
+
+@keyframes sparkle {
+  0% {
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+    filter: drop-shadow(0 0 2px #FE8BBB);
+  }
+  25% {
+    transform: rotate(90deg) scale(0.5);
+    opacity: 0.6;
+    filter: drop-shadow(0 0 6px #FE8BBB);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #FE8BBB);
+  }
+  75%{
+    transform: rotate(120deg) scale(0);
+    opacity: 0.2;
+    filter: drop-shadow(0 0 6px #FE8BBB);
+
+  }
+  100%{
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+    filter: drop-shadow(0 0 2px #FE8BBB);
+  }
+}
+
+
+.subtitle {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    display: inline-block;
+    
+}
+
+.subtitle::after {
+    content: '...';
+    width: 3ch;
+    display: inline-block;
+    animation: blinkDots 1.5s infinite steps(3, end);
+}
+
+.dots {
+  display: inline-block;
+  animation: blinkDots 1.5s infinite steps(3, end);
+}
+
+@keyframes blinkDots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+
+.projects-container{
+    background-color: #f8f8f8;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    margin-top: 75px;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 20px;
+    border-radius: 12px;
+    transition: background-color 0.5s ease;
+}
+
+.project-card{
+    
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: rgb(51, 65, 85);
+    border: 2px solid #e2e8f0;
+    transition: color 0.5s ease,border 0.5s ease,box-shadow 0.5s ease;
+    
+}
+
+.project-card:hover{
+    border: 2px solid #0ea4e9c1;
+    box-shadow: 0 0 20px rgba(14, 164, 233, 0.5);
+}
+
+.card{
+    width:100%;
+    height: 100%;
+    border-radius: 12px;
+}
+.card-info{
+    background-color: #e0e0e0;
+    width:100%;
+    height: 35%;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+    
+}
+.card-img{
+    width:100%;
+    height:65%;
+    border-radius:10px 10px 0 0;
+    overflow: hidden;
+
+}
+.info-project h3,.info-project p {
+    margin:0;
+    transition: color 0.5s ease;
+}
+.info-project h3{
+    margin-bottom: 5px;
+}
+
+.info-project{
+    width: 250px;
+}
+
+.h3-icon{
+    display: flex;
+    justify-content: space-between;
+}
+.h3-icon svg{
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover svg {
+    transform: translate(5px,-5px);
+}
+
+.project-image { 
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius:10px 10px 0 0;
+  transition: transform 0.5s ease;
+  
+  
+}
+.project-card:hover .project-image {
+    transform: scale(1.2);
+}
+
+
+
+
+/* Dark MODE */ 
+
+
+.page.dark-mode .star{
+    fill: #FFD700;
+}
+
+.page.dark-mode .info-project h3, .page.dark-mode .info-project p, .page.dark-mode .project-card{
+    color: white;
+}
+
+.page.dark-mode .projects-container{
+    background-color: #2c2c2c;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.page.dark-mode .card-info{
+    background-color: #3a3a3a; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.page.dark-mode .project-card{
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
+}
+.page.dark-mode .project-card:hover{
+    border: 2px solid #9e7aff;
+    box-shadow: 0 0 20px rgba(158, 122, 255, 0.5);
+}
+
+
+/* ------------------------------------ */
+
+@media (max-width: 650px){
+
+    .home-container{
+        margin-top: 25px;
+    }
+
+    .title,.effects{
+        font-size: 2.5rem;
+    }
+
+    .star {
+        width: 14px;
+        height: 14px;
+    }
+
+    .subtitle {
+        margin-top: 25px;
+        font-size: 1rem;
+    }
+
+    .projects-container{
+        margin-top: 40px;
+    }
+    .projects-container {
+        grid-template-columns: repeat(1,300px); 
+    }
+
+}   

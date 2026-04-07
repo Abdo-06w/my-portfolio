@@ -1,0 +1,75 @@
+.socialbar{
+    margin-top: 2.5rem;
+    border-top: 1px solid transparent;
+    background:
+    linear-gradient(to right, transparent, rgba(0,0,0,0.15), transparent);
+    background-size: 50% 2px;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+}
+.social-list{
+    margin-top: 15px;
+    display: flex;  
+    gap: 15px;
+    justify-content: center; 
+}
+
+.social-list a{
+    display: inline-block; 
+    color:rgba(51, 65, 85,0.5);
+    transition: transform 0.2s ease, color 0.3s ease;
+    font-size: 25px;
+}
+
+.social-list a:hover{
+    color:black;
+    transform: scale(1.2) rotate(10deg);
+}
+
+.social-c{
+    color:rgba(51, 65, 85,0.5);
+    transition: color 0.5s ease;
+}
+
+/*Dark MODE */
+
+.page.dark-mode .socialbar {
+    border-top: 1px solid transparent;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.25), transparent);
+    background-size: 50% 2px;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+
+.page.dark-mode .socialbar a {
+    color:rgba(255, 255, 255, 0.7);
+}
+
+.page.dark-mode .socialbar a:hover {
+    color: #87CEFA;
+}
+
+.page.dark-mode .socialbar .social-c{
+    color:rgba(255, 255, 255, 0.7);
+}
+
+
+
+/*---------------------*/
+
+@media (max-width: 650px) {
+    .social-list a {
+        font-size: 20px;
+    }
+    .socialbar {
+        padding: 3px 0;
+        width: 90%;
+    }
+}

@@ -1,0 +1,15 @@
+.page{
+    padding-top: 64px;
+    min-height: 100vh;
+    transition: background-color 0.5s ease, color 0.5s ease ;
+    color: rgb(51, 65, 85);
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page.dark-mode{
+    color: white;
+}

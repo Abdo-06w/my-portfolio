@@ -1,0 +1,138 @@
+ul{
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+.navbar{
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+
+    background-color: rgba(255, 255, 255, 0.6); /* bianco traslucido per light mode */
+    backdrop-filter: blur(10px);               /* sfocatura dello sfondo */
+    -webkit-backdrop-filter: blur(10px);       /* compatibilità Safari */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+
+}
+.navdiv{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+.nav-links{
+    display: flex; 
+    align-items: center;
+    gap: 20px;
+}
+.link{
+    text-decoration: none;
+    color: rgb(51, 65, 85);
+    font-weight: 700;
+    transition: text-decoration-color 0.3s;
+    font-size: 0.9rem;
+    transition: color 0.5s ease;
+}
+
+
+.link:hover{
+    text-decoration: underline;
+    text-decoration-color: aqua;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+}
+.nav-divider{
+    color:rgb(203, 213, 225);
+}
+
+.change-themes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.material-symbols-outlined{
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color:rgb(51, 65, 85);
+    transition: color 0.5s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border-radius: 50%;
+    padding: 8px;
+}
+.material-symbols-outlined:active {
+  transform: scale(1.2) rotate(15deg);
+}
+.material-symbols-outlined:hover{
+    color:#FFD700;
+}
+
+
+/*DARK MODE*/
+
+.navbar.dark-mode{
+    background-color: rgba(30, 30, 30, 0.7);  /* grigio scuro traslucido */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.navbar.dark-mode .link{
+    color:white;
+}
+
+.navbar.dark-mode .material-symbols-outlined{
+    color:white;
+}
+.navbar.dark-mode .material-symbols-outlined:hover{
+    color:#87CEFA;
+}
+
+
+/*------------------*/
+
+
+@media (hover: hover) and (pointer: fine) {
+    .material-symbols-outlined:hover {
+        color: #FFD700;
+        box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+        transform: scale(1.1);
+    }
+
+    .navbar.dark-mode .material-symbols-outlined:hover {
+        color: #87CEFA;
+        box-shadow: 0 0 12px rgba(135, 206, 250, 0.6);
+    }
+
+}
+
+
+@media(max-width: 650px){
+
+    .navbar{
+        height: 56px;
+    }
+
+    .navdiv{
+        width: 85%; 
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .link {
+        font-size: 0.8rem;
+    }
+
+    .material-symbols-outlined{
+        font-size: 20px;
+    }
+    
+}

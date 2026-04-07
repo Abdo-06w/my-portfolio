@@ -18,4 +18,3 @@ This is my personal portfolio built with:
 - CSS  
 - HTML
 
----
